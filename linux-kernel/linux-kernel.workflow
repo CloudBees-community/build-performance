@@ -1,8 +1,11 @@
-node {
+node('hi-speed') {
   stage "Download"
   sh "wget --continue https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.1.12.tar.xz"
 
+
+
   stage "Unpack"
+  sh "rm -rf linux-4.1.12"
   sh "tar xf linux-4.1.12.tar.xz"
 
   stage "Configure"
